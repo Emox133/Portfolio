@@ -1,0 +1,342 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Inria Serif', serif;
+    font-size: 62.5%;  /*1 rem*/
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6));
+    scroll-behavior: smooth;
+}
+
+/*******ANIMATIONS **********/
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes projectsSlideIn {
+ 0% {
+     opacity: 0;
+     transform: translateY(-100%);
+ }
+
+ 100% {
+     opacity: 1;
+     transform: translateY(0);
+    }
+}
+
+@keyframes projectsSlideOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+
+ @keyframes flicker-1 {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    41.99% {
+      opacity: 1;
+    }
+    42% {
+      opacity: 0;
+    }
+    43% {
+      opacity: 0;
+    }
+    43.01% {
+      opacity: 1;
+    }
+    47.99% {
+      opacity: 1;
+    }
+    48% {
+      opacity: 0;
+    }
+    49% {
+      opacity: 0;
+    }
+    49.01% {
+      opacity: 1;
+    }
+  }
+    
+/*******ANIMATIONS END**********/
+
+/******INTRO HOME ********/
+.intro__home {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    font-size: 3rem;
+    letter-spacing: .1em;
+    color: #fff;
+    background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), 
+    top / cover no-repeat url('../assets/images/home.jpg');
+    z-index: 10;
+}
+
+.intro__cta {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%, -2%);
+    font-size: 2.5rem;
+    color: #fff;
+	animation: flicker-1 .9s linear infinite both;
+    transition: all .2s;
+    z-index: 35;
+}
+
+.intro__cta:hover {
+    cursor: pointer;
+}
+
+.intro__visible {
+    padding: 0 0 6rem 2rem;
+}
+
+.typing {
+    margin-left: 10px;
+    padding-bottom: 6rem;
+}
+
+.typing::after {
+    content: "";
+    height: 5%;
+    width: 1px;
+    border-right: 1.5px solid #fff;
+    animation: blink .5s infinite ease;
+}
+
+/******END OF INTRO HOME ********/
+
+/*****INTRO NAVIGATION *********/
+.intro__contact {
+    height: 30vh;
+    position: absolute;
+    top: 30%;
+    right: 1%;
+    z-index: 30;
+}
+
+.intro__navigation {
+    height: 100%;
+    font-size: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-right: 1.2rem;
+}
+
+.icon {
+    transition: all .2s ease;
+}
+
+.icon:hover {
+    transform: translateY(-.5rem) scale(1.05);
+    cursor: pointer;
+}
+
+.icon__github {
+    color: #222;
+}
+
+.icon__linkedin {
+    color: #2867B2;
+}
+
+.icon__envelope {
+    color: #54C0D4;
+}
+/*****INTRO NAVIGATION END*********/
+
+
+/*******PROJECTS SECTION **********/
+.projects {
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6));
+    /* transform: translateY(-100%); */
+    /* animation: projectsSlideIn 2s ease; */
+    /* backdrop-filter: blur(4px); */
+    overflow: scroll;
+    z-index: 20;
+}
+
+.projects__nav {
+    height: 10rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.projects__avatar {
+    height: 8rem;
+    width: 8rem;
+    margin: 1rem 2rem;
+    position: relative;
+}
+
+.projects__avatar-img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.projects__close {
+    font-size: 5rem;
+    color: #fff;
+}
+
+.projects__close:hover {
+    cursor: pointer;
+}
+
+/*******PROJECTS SECTION END**********/
+
+/*********SINGLE PROJECT *********/
+.projects__content {
+    height: calc(100% - 10rem);
+    width: 93vw;
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(150px, 300px));
+    grid-template-columns: repeat(auto-fit, minmax(250px, min-content));
+    grid-gap: 1rem;
+}
+
+.project {
+    text-align: center;
+    background-color: #fff;   
+    opacity: .7;
+}
+
+.project__image {
+    height: 13rem;
+    width: 100%;
+    margin-bottom: .5rem;
+}
+
+.project__name {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.project__description {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: .5rem;
+}
+
+.project__how-to {
+    margin: 2rem .5rem;
+    padding: .5rem 1rem;
+    border: none;
+    color: #fff;
+    background-color: deepskyblue;
+    transition: transform .2s ease;
+    box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, .5);
+}
+
+.project__how-to:hover {
+    cursor: pointer;
+    transform: translateY(-.5rem) scale(1.05);
+    box-shadow: 0 1.5rem 2.5rem rgba(0, 0, 0, .6);
+}
+
+.project__how-to:focus {
+    outline: none;
+}
+/*********SINGLE PROJECT END*********/
+
+
+/*******MEDIA QUERIES **********/
+@media (max-width: 75em) {  /*1200 px*/ 
+    .intro__navigation {
+        font-size: 3.5rem;
+    }
+
+    .intro__cta {
+        font-size: 1.6rem;
+    }
+
+    .intro__home {
+        font-size: 1.6rem;
+    }
+    
+    .projects__content {
+        grid-template-rows: repeat(auto-fit, minmax(220px, 250px));
+        grid-template-columns: repeat(auto-fit, minmax(250px, min-content));
+    }
+
+    .projects__nav {
+        height: 7rem;
+    }
+
+    .projects__avatar {
+        height: 6rem;
+        width: 6rem;
+        margin: .5rem 1rem;
+    }
+
+    .project__image {
+        height: 11rem;
+    }
+    
+    .project__name {
+        font-size: 1.5rem;
+    }
+    
+    .project__description {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 37.5em) { /*600px*/
+    .intro__navigation {
+        font-size: 3rem;
+    }
+
+    .intro__cta {
+        font-size: 1.3rem;
+    }
+
+    .intro__home {
+        font-size: 1.3rem;
+    }
+    
+    .projects__content {
+        justify-content: center;
+        grid-template-rows: repeat(auto-fit, minmax(220px, 250px));
+        grid-template-columns: repeat(auto-fit, minmax(250px, min-content));
+    }
+}
+
+/*******MEDIA QUERIES END **********/
