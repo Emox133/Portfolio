@@ -1,4 +1,4 @@
-let texts = ['Emir Salihović', 'a frontent developer'];
+let texts = ['Emir Salihović', 'a frontend developer'];
 
 let count = 0;
 let index = 0;
