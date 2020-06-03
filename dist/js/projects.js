@@ -60,9 +60,9 @@ let removeProjectsFromDom = () => {
     }
 };
 
-let addBackdropFilter = () => {
-    projects.style.backdropFilter = 'blur(4px)';
-};
+// let addBackdropFilter = () => {
+//     projects.style.backdropFilter = 'blur(4px)';
+// };
 
 let showProjects = () => {
     // ReRender nav and projects every time 
@@ -77,9 +77,9 @@ let showProjects = () => {
 
     // Add backdrop filter a litle bit latter 'cause of perfomance 
     // Reason - Backdrop filter uses GPU rendering
-    setTimeout(() => {
-        addBackdropFilter();
-    }, 2000)
+    // setTimeout(() => {
+    //     addBackdropFilter();
+    // }, 2000)
 };
 
 let closeProjects = () => {
