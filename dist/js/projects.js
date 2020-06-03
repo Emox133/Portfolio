@@ -17,7 +17,7 @@ let renderRepos = (repo) => {
         <div class="project" data-id=${repo.id}>
             <img src="${languageUsed(repo.language)}" alt="language-used" class="project__image">
             <h2 class="project__name">${repo.name}</h2>
-            <p class="project__description">${repo.description}</p>
+            <p class="project__description">${repo.description ? repo.description : 'No description'}</p>
             <a href=${repo.html_url} target="_blank"/><button class="project__how-to">Link to project</button></a>
         </div>
     `;
